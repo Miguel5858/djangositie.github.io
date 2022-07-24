@@ -1,0 +1,15 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="text-center">
+    <br><br>
+    
+<h2>Acuerdas el pago y capacitación con el vendedor</h2>
+<p>Luego de confirmar tu compra, tendrás que contactarlo para acordar el pago y la entrega del servicio.<p>
+
+<a class="btn btn-primary" href="{% url 'blog:post_confirm' post.id %}">Ok. entiendo</a>
+</div>
+
+{% endblock %}

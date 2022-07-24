@@ -1,0 +1,78 @@
+
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<header>
+    <div id="carouselExampleDark" class="carousel carousel-light slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="6000">
+            <img src="{% static 'portfolio/1.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-white">Facturación Electrónica</h5>
+              <a class="btn btn-outline-light" href="/blog">Saber más</a>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="3000">
+            <img src="{% static 'portfolio/2.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+
+              <h5>Sistema Adaptable y Amigable</h5>
+              <p>Muy fácil e intuitivo para optimizar tu tiempo.</p>
+              
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'portfolio/3.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-white">FIRMA ELECTRÓNICA
+                EN ARCHIVO PFX-P12</h5>
+              <p class="text-white">El archivo de firma electrónica al ser un archivo digital, el usuario puede hacer las copias o respaldos que necesite, puede tenerlo en su correo electrónico, en la nube, en una flash memory, en varios computadores etc.</p>
+              <a class="btn btn-outline-light" href="https://api.whatsapp.com/send?phone=593996193351&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20Firma%20Electrónica" class="float" target="_blank"">Solicitar el trámite</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</header>
+
+<div class="row my-4 text-center">
+<h3>LOS PLANES MÁS SOLICITADOS</h3>
+
+{% for project in projects %}
+
+<div class="col-md-4 ">
+    <a href="/blog">
+    <div class="card bg-black card-project">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card-img-top">
+        <div class="card-body">
+        </a>
+            <h3 class="text-dark">{{ project.title }}</h3>
+            <h4 class="text-success"><strong>$ {{ project.price }}</strong></h4>
+             <a href="/blog"class="btn btn-outline-primary">Saber más</a>
+        
+        </div>
+
+    </div>
+
+</div>
+{% endfor %}
+{% endblock %}
+</div>
+
+
+

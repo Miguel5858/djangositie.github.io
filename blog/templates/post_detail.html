@@ -1,0 +1,27 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+
+</br></br></br>
+<div class="row">
+<div class="col-md-6 p-4">
+    <img class="card img-post" width="50%" src="{{post.image.url}}" alt="{{post.title}">
+</div>
+<div class="col-md-6 my-auto">
+    <h1><strong>{{post.title}}</strong> </h1>
+    <h3 class="text-success"><strong>Precio $ {{post.price}}</strong></h3>
+    <h3 class="my-2 h5 text-muted">Publicado: {{post.date}}</h3>
+    <p>{{post.description|safe}}</p>
+    <a class="btn btn-outline-primary" href="/blog">⏎ Regresar</a>
+<a class="btn btn-primary" href="{% url 'blog:post_sale' post.id %}">Comprar ahora</a>
+    
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
